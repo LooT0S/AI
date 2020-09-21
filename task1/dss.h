@@ -9,6 +9,8 @@ class dss : public QWidget, public dsslogic {
 public:
     dss(QWidget *parent = 0);
     virtual ~dss() {};
+    int getIndexQuestionCounter();
+    int indexQuestionCounter = 0;
 
 public slots:
     void OnYesPressed();
@@ -19,7 +21,7 @@ private:
     QPushButton *noBtn;
     QLabel *questionLbl;
 
-    int indexQuestionCounter = 0;
+    //int indexQuestionCounter = 0;
 };
 
 #endif // DSS_H

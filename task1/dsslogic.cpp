@@ -7,7 +7,7 @@ dsslogic::dsslogic()
 
 void dsslogic::calcAnswer()
 {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 7; i++) {
         for (int j = 0; j < 8; j++) {
             switch (i) {
                 case 0:
@@ -58,39 +58,43 @@ void dsslogic::calcAnswer()
     out.push_back(JAVA);
 }
 
-void dsslogic::getRes()
+QString dsslogic::getRes()
 {
+    calcAnswer();
     int maxValue = *std::max_element(out.begin(), out.end());
+    QString res;
+    if (std::adjacent_find(out.begin(), out.end(), std::not_equal_to<int>()) == out.end()) {
+            res += "Спробуйте знову";
+        }else {
 
     if (maxValue == C) {
-        std::cout << "C language" << std::endl;
+        res += "C language";
     }
 
     if (maxValue == CPP) {
-        std::cout << "C++ language" << std::endl;
+        res += "C++ language";
     }
 
     if (maxValue == JS) {
-        std::cout << "JavaScript language" << std::endl;
+        res += "JavaScript language";
     }
 
     if (maxValue == PHP) {
-        std::cout << "PHP language" << std::endl;
+        res += PHP;
     }
 
     if (maxValue == CSHARP) {
-        std::cout << "C# language" << std::endl;
+        res += "C# language";
     }
 
     if (maxValue == PYTHON) {
-        std::cout << "Python language" << std::endl;
+        return "Python language";
     }
 
     if (maxValue == JAVA) {
-        std::cout << "Java language" << std::endl;
+        res += "Java language";
     }
 
-    if (maxValue == C && maxValue == CPP && maxValue == JS && maxValue == PHP && maxValue == CSHARP && maxValue == PYTHON && maxValue == JAVA) {
-        std::cout << "bullshit" << std::endl;
-    }
+}
+
 }

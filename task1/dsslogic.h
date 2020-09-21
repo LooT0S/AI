@@ -8,7 +8,7 @@ class dsslogic
 public:
     dsslogic();
     void calcAnswer();
-    void getRes();
+    QString getRes();
 
 protected:
     std::array<std::string, 8> question = {
@@ -26,8 +26,8 @@ protected:
     std::vector<int> out;
 
     int bk[7][8] = {
-        {42, 1, 10, 15, 4, 2, 1, 35},
-        {5, 4, 30, 40, 2, 5, 10, 6},
+        {42, 1, 10, 15, 4, 2, 1, 25},
+        {5, 4, 30, 40, 2, 5, 10, 4},
         {-1, 50, 10, 10, 10, 15, -1, 5},
         {-1, 60, 5, 15, 20, -1, -1},
         {-1, 30, 10, 30, 20, 5, -1, 5},

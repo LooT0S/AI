@@ -36,6 +36,10 @@ void dss::OnYesPressed() {
     if (indexQuestionCounter == 7) {
             yesBtn->setEnabled(false);
             noBtn->setEnabled(false);
+
+
+            QString s = getRes();
+            questionLbl->setText(s);
         } else {
             indexQuestionCounter++;
             res.push_back(1);
@@ -47,9 +51,17 @@ void dss::OnNoPressed() {
     if (indexQuestionCounter == 7) {
         noBtn->setEnabled(false);
         yesBtn->setEnabled(false);
+
+        QString s = getRes();
+        questionLbl->setText(s);
+
     } else {
         indexQuestionCounter++;
         res.push_back(0);
         questionLbl->setText(QString::fromStdString(question[indexQuestionCounter]));
     }
+}
+
+int dss::getIndexQuestionCounter() {
+    return indexQuestionCounter;
 }
