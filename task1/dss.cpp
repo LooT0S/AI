@@ -16,7 +16,7 @@ dss::dss(QWidget *parent) : QWidget(parent) {
 
     hboxForTitle->addStretch(5);
     hboxForTitle->addWidget(title, Qt::AlignTop);
-    hboxForLbl->addStretch(110);
+    hboxForLbl->addStretch(40);
     hboxForLbl->addWidget(questionLbl, Qt::AlignCenter);
 
     hbox->addWidget(yesBtn, Qt::AlignCenter);

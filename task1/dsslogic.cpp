@@ -62,39 +62,40 @@ QString dsslogic::getRes()
 {
     calcAnswer();
     int maxValue = *std::max_element(out.begin(), out.end());
-    QString res;
+
+    std::string result;
     if (std::adjacent_find(out.begin(), out.end(), std::not_equal_to<int>()) == out.end()) {
-            res += "Спробуйте знову";
-        }else {
+            result = result + "Спробуйте знову";
+        } else {
+            if (maxValue == C) {
+                result = result + "C language" + std::to_string(C) + "% ";
+            }
 
-    if (maxValue == C) {
-        res += "C language";
-    }
+            if (maxValue == CPP) {
+                result = result + "C++ language"  + std::to_string(CPP) + "% ";
+            }
 
-    if (maxValue == CPP) {
-        res += "C++ language";
-    }
+            if (maxValue == JS) {
+                result = result + "JavaScript language" + std::to_string(JS) + "% ";
+            }
 
-    if (maxValue == JS) {
-        res += "JavaScript language";
-    }
+            if (maxValue == PHP) {
+                result = result + "PHP language" + std::to_string(PHP) + "% ";
+            }
 
-    if (maxValue == PHP) {
-        res += PHP;
-    }
+            if (maxValue == CSHARP) {
+                result = result + "C# language" + std::to_string(CSHARP) + "% ";
+            }
 
-    if (maxValue == CSHARP) {
-        res += "C# language";
-    }
+            if (maxValue == PYTHON) {
+                result = result + "Python language" + std::to_string(PYTHON) + "% ";
+            }
 
-    if (maxValue == PYTHON) {
-        return "Python language";
-    }
+            if (maxValue == JAVA) {
+                result = result + "Java language" + std::to_string(JAVA) + "% ";
+            }
 
-    if (maxValue == JAVA) {
-        res += "Java language";
-    }
-
-}
+        }
+    return QString::fromStdString(result);
 
 }
