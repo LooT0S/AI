@@ -34,6 +34,7 @@ dss::dss(QWidget *parent) : QWidget(parent) {
 
 void dss::OnYesPressed() {
     if (indexQuestionCounter == 7) {
+            res.push_back(1);
             yesBtn->setEnabled(false);
             noBtn->setEnabled(false);
 
@@ -49,6 +50,7 @@ void dss::OnYesPressed() {
 
 void dss::OnNoPressed() {
     if (indexQuestionCounter == 7) {
+        res.push_back(0);
         noBtn->setEnabled(false);
         yesBtn->setEnabled(false);
 

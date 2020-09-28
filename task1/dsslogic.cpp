@@ -64,9 +64,9 @@ QString dsslogic::getRes()
     int maxValue = *std::max_element(out.begin(), out.end());
 
     std::string result;
-    if (std::adjacent_find(out.begin(), out.end(), std::not_equal_to<int>()) == out.end()) {
-            result = result + "Спробуйте знову";
-        } else {
+    if (std::equal(out.begin() + 1, out.end(), out.begin())) {
+            return "Спробуйте знову";
+    } else {
             if (maxValue == C) {
                 result = result + "C language" + std::to_string(C) + "% ";
             }
